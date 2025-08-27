@@ -35,7 +35,7 @@ struct ListingItemView: View {
                 }
             }.font(.footnote)
         }
-        .padding()
+        
     }
 }
 
