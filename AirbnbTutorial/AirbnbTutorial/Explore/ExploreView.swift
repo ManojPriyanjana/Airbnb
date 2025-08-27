@@ -10,14 +10,21 @@ struct ExploreView:View {
                     
                     LazyVStack {
                         ForEach(0..<20,id:\.self) {
-                            
-                            listing in ListingItemView()
-                                .frame(height: 400)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                            listing in NavigationLink(value:listing){
+                                ListingItemView()
+                                    .frame(height:400)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                            }
                         }
                     }
                     .padding()
                 }
+            }.navigationDestination(for:Int.self){listing in
+                
+                Text("listing deatail view ..")
+                
+               
+                
             }
         }
     }
